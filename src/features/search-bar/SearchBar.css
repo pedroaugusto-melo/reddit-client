@@ -1,0 +1,22 @@
+.SearchBar {
+    position: absolute;
+    top: 60px;
+    background-color: var(--dark-menu-background);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 0.75px solid var(--dark-main-background);
+}
+
+.SearchBar input {
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    height: 50%;
+    width: 80%;
+    font-size: 16px;
+    padding: 0 20px;
+    background-color: var(--dark-input-background);
+}
