@@ -5,6 +5,7 @@ import { fetchPosts } from './postsSlice';
 import Post from './post/Post';
 import './Posts.css';
 import { selectSearchTerm } from '../search-bar/searchBarSlice';
+import PostLoading from './post/posts-loading/PostsLoading';
 
 export default function Posts() {
     const dispatch = useDispatch();
@@ -43,7 +44,7 @@ export default function Posts() {
             
 
             {isLoadingPosts && 
-                <h3>Loading...</h3>
+                <PostLoading />
             }
 
             <ul>

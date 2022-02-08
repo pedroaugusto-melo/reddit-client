@@ -36,6 +36,10 @@
     padding: 0 20px;
 }
 
+.Subreddits ul li:hover, .Subreddits h3 {
+    cursor: pointer;
+}
+
 .Subreddits li img {
     width: 32px;
     height: 32px;

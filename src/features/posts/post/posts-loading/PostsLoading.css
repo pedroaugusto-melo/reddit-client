@@ -1,0 +1,33 @@
+.PostLoadingMobile, .PostLoadingDesktop {
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+    background-color: #939598;
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.PostLoadingDesktop {
+    display: none;
+    width: 56vw;
+}
+  
+.DataAnimation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 770px) {
+    .PostLoadingMobile {
+        display: none;
+    }
+
+    .PostLoadingDesktop {
+        display: flex;
+        column-gap: 15px;
+    }
+}

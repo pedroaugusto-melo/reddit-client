@@ -8,6 +8,8 @@ import btnClose from '../../img/img-close.png';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchSubreddits } from '../../features/subreddits/subredditsSlice';
+import { setCurrentSubreddit } from '../../features/posts/postsSlice';
+import { setSearchTerm } from '../../features/search-bar/searchBarSlice';
 
 export default function MenuMobile() {
     const [ isSearchActive, setIsSearchActive ] = useState(false);
@@ -28,6 +30,11 @@ export default function MenuMobile() {
         setIsSubActive(prevIsSubActive => !prevIsSubActive);
         setIsSearchActive(false);
         formatSubredditsMargin();
+    };
+
+    const handleClickBrand = () => {
+        dispatch(setCurrentSubreddit('r/Home'));
+        dispatch(setSearchTerm(''));
     };
 
     function formatSearchMargin() {
@@ -58,11 +65,14 @@ export default function MenuMobile() {
 
     return(
         <header className='MenuMobile' data-testid='Menu'>
-            <figure className='Brand'>
-                <img alt='Reddit Icon' src={iconReddit} />
-                <figcaption>
-                    reddit
-                </figcaption>
+            <figure 
+                className='Brand'
+                onClick={handleClickBrand}
+            >
+                    <img alt='Reddit Icon' src={iconReddit} />
+                    <figcaption>
+                        reddit
+                    </figcaption>
             </figure>
 
             <nav className='NavMobile'>

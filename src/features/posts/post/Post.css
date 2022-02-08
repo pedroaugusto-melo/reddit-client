@@ -96,5 +96,9 @@
     column-gap: 10px;
 }
 
+.Post .PostSummary .AuthorAndComments .CommentsStatus:hover{
+    cursor: pointer;
+}
+
 
 

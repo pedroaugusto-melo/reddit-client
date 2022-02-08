@@ -16,6 +16,10 @@
     font-size: 40px;
 }
 
+.MenuDesktop .Brand:hover {
+    cursor: pointer;
+}
+
 .MenuDesktop .Brand img {
     width: 58px;
 }
@@ -24,7 +28,7 @@
     position: absolute;
     z-index: 5;
     top: 30px;
-    left: calc(32vw + 50%);
+    left: calc(31vw + 50%);
     width: 40px;
     height: 40px;
 }
