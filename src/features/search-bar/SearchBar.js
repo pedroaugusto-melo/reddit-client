@@ -11,7 +11,7 @@ export default function SearchBar() {
     };
 
     return(
-        <div className='SearchBar'>
+        <div className='SearchBar' data-testid='SearchBar'>
             <input 
                 type='text' 
                 placeholder='Search Reddit'

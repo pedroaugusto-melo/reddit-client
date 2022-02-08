@@ -1,11 +1,17 @@
 import { render, fireEvent, screen } from '@testing-library/react'
 import MenuMobile from './MenuMobile';
+import { Provider } from 'react-redux';
+import store from '../../app/store';
 
 
 describe('MenuMobile component', () => {
     describe('when redered', () => {
         it('shows the brand', () => {
-            render(<MenuMobile />);
+            render(
+              <Provider store={store} >
+                <MenuMobile />
+              </Provider>
+            );
 
             expect(screen.getByText(/reddit/i)).toBeInTheDocument();
         })
@@ -13,16 +19,24 @@ describe('MenuMobile component', () => {
 
     describe('when search button is clicked', () => {
         it('shows search bar', () => {
-          render(<MenuMobile />);
+          render(
+            <Provider store={store} >
+              <MenuMobile />
+            </Provider>
+          );
     
           const searchBtn = screen.getByAltText(/search/i);
           fireEvent.click(searchBtn);
     
-          expect(screen.getByPlaceholderText('Search Reddit')).toBeInTheDocument();
+          expect(screen.getByTestId('SearchBar')).toBeInTheDocument();
         });
     
         it('shows close button', () => {
-          render(<MenuMobile />);
+          render(
+            <Provider store={store} >
+              <MenuMobile />
+            </Provider>
+          );
     
           const searchBtn = screen.getByAltText(/search/i);
           fireEvent.click(searchBtn);
@@ -33,17 +47,24 @@ describe('MenuMobile component', () => {
     
       describe('when subreddit button is clicked', () => {
         it('shows the reddits list', () => {
-          render(<MenuMobile />);
+          render(
+            <Provider store={store} >
+              <MenuMobile />
+            </Provider>
+          );
     
           const subBtn = screen.getByAltText(/subreddit/i);
           fireEvent.click(subBtn);
     
-          expect(screen.getByText(/home/i)).toBeInTheDocument();
-          expect(screen.getByText(/see all/i)).toBeInTheDocument();
+          expect(screen.getByTestId('Subreddits')).toBeInTheDocument();
         });
     
         it('shows close button', () => {
-          render(<MenuMobile />);
+          render(
+            <Provider store={store} >
+              <MenuMobile />
+            </Provider>
+          );
     
           const subBtn = screen.getByAltText(/subreddit/i);
           fireEvent.click(subBtn);

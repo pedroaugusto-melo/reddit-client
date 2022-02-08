@@ -1,0 +1,91 @@
+.Post {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.PostContent {
+    box-sizing: border-box;
+    background-color: var(--dark-post-background);
+    border: 0;
+    border-radius: 20px;
+    color: var(--dark-color-text);
+    padding: 15px 25px;
+    display: flex;
+    column-gap: 25px;
+}
+
+.Post h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.Post img {
+    width: 20px;
+    height: 20px;
+}
+
+.Post .PostUps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Post .PostUps img{
+    width: 24px;
+    height: 24px;
+}
+
+.Post .PostUps h3{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.Post .PostSummary {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Post .PostSummary h2 {
+    padding-bottom: 12.5px;
+    border-bottom: 1px solid var(--dark-color-text);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 770px) {
+    .Post .PostSummary h2 {
+        max-height: 75px;
+        overflow: scroll;
+    }
+}
+
+.Post .PostSummary h4 {
+    font-weight: 400;
+}
+
+.Post .PostSummary h5 {
+    font-weight: 300;
+}
+
+.Post .PostSummary h6 {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+.Post .PostSummary .AuthorAndComments {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12.5px;
+}
+
+.Post .PostSummary .AuthorAndComments .Comments{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+
+

@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
   --dark-menu-background: #54565B;
   --color-reddit: #FF4500;
   --dark-color-text: #FAF8EB;
   --dark-main-background: #76777B;
+  --dark-post-background: #939598;
   --dark-input-background: #DFE1E5;
 }
 
 .App {
   font-family: 'Poppins', sans-serif;
   background-color: var(--dark-main-background);
+  min-height: 100vh;
 }

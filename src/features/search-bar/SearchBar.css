@@ -1,5 +1,6 @@
 .SearchBar {
     position: absolute;
+    z-index: 5;
     top: 60px;
     background-color: var(--dark-menu-background);
     height: 80px;
@@ -19,4 +20,9 @@
     font-size: 16px;
     padding: 0 20px;
     background-color: var(--dark-input-background);
+}
+
+.SearchBar input:focus,
+.SearchBar input:active {
+    border: 2px solid var(--color-reddit);
 }

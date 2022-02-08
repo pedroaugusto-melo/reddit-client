@@ -1,18 +1,28 @@
 import { render, screen } from '@testing-library/react';
+import store from './store';
 import App from './App';
+import { Provider } from 'react-redux';
 
 describe('App Component', () => {
   describe('when render', () => {
     it('shows a menu', () => {
-      render(<App />);
+      render(
+        <Provider store={store} >
+          <App />
+        </ Provider>
+      );
 
       expect(screen.getByText(/reddit/i)).toBeInTheDocument();
     });
 
-    it('shows a post', () => {
-      render(<App />);
+    it('shows post component', () => {
+      render(
+        <Provider store={store} >
+          <App />
+        </ Provider>
+      );
 
-      expect(screen.getByAltText(/comments/i)).toBeInTheDocument();
+      expect(screen.getByTestId('Posts')).toBeInTheDocument();
     });
   })
 });
