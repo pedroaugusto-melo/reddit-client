@@ -23,6 +23,10 @@
 }
 
 @media only screen and (min-width: 770px) {
+  .App {
+    overflow-y: scroll;
+  }
+
   .MenuMobile {
     display: none;
   }

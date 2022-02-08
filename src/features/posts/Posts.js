@@ -24,6 +24,7 @@ export default function Posts() {
         }));
     }, [currentSubreddit, currentSearchTerm, dispatch]);
 
+
     const handleShowAll = () => {
         setIsShowingAll(true);
     };
@@ -31,7 +32,6 @@ export default function Posts() {
     const handleShowLess = () => {
         setIsShowingAll(false);
     }
-    
 
     return (
         <div className='Posts' data-testid='Posts'>

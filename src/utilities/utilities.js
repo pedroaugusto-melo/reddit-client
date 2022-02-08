@@ -1,4 +1,4 @@
-const formatDate = postDate => {
+function formatDate(postDate) {
     let formatedDate = '';
     const currDate = new Date();
 

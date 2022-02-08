@@ -2,6 +2,7 @@ import './MenuDesktop.css';
 import iconReddit from '../../img/img-reddit-big.png';
 import imgSearch from '../../img/img-search.png';
 import SearchBar from '../../features/search-bar/SearchBar';
+import Subreddits from '../../features/subreddits/Subreddits';
 
 export default function MenuDesktop() {
     return (
@@ -15,6 +16,8 @@ export default function MenuDesktop() {
             
             <SearchBar />
             <img className='ImgSearch' alt='Search Icon' src={imgSearch} />
+            <Subreddits />
         </header>
+    
     );
 }

@@ -14,6 +14,7 @@ export default function Subreddits() {
 
     const [ isShowingAll, setIsShowingAll ] = useState(false);
 
+
     const handleShowAll = () => {
         setIsShowingAll(true);
     }
@@ -30,6 +31,10 @@ export default function Subreddits() {
 
     return(
         <div className='Subreddits' data-testid="Subreddits">
+            {!isSubredditsLoading &&
+                <h2 className='SubredditsTitle'>Subreddits</h2>
+            }
+            
             {isSubredditsLoading && <h3>Loading</h3>}
 
             {isSubredditsFail && <h3>Subreddits loading failed.</h3>}
