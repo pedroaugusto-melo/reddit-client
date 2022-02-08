@@ -11,16 +11,11 @@ const fetchComments = createAsyncThunk(
 const commentsSlice = createSlice({
     name: 'comments',
     initialState: {
-        url: '',
         commentsData: {},
         isLoading: false,
         isError: false
     },
     reducers: {
-        setURL: (state, action) => {
-            state.url = action.payload;
-        },
-
         setPostId: (state, action) => {
             state.commentsData[action.payload] = [];
         }
@@ -44,12 +39,12 @@ const commentsSlice = createSlice({
 
             commentsDataFetched.forEach(commentData => {
                 const postId = commentData.data.parent_id.slice(3);
-
+                
                 state.commentsData[postId].push({
                     id: commentData.data.id,
                     author: commentData.data.author,
                     text: commentData.data.body,
-                    createdUTC: commentData.data.created_utc
+                    createdUTC: Number(`${commentData.data.created_utc}000`)
                 });
             });
         }
@@ -63,5 +58,5 @@ const selectIsErrorComments = state => state.comments.isError;
 
 export { fetchComments };
 export { selectURL, selectComments, selectIsLoadingComments, selectIsErrorComments };
-export const { setURL, setPostId } = commentsSlice.actions;
+export const { setPostId } = commentsSlice.actions;
 export default commentsSlice.reducer;

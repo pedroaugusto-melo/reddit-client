@@ -1,0 +1,45 @@
+.Comment {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    background-color: var(--dark-comment-background);
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    position: relative;
+}
+
+.Comment .CommentHeader {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.Comment h3 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.Comment h4 {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.Comment h2 {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.Comment .CommentText {
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 770px) {
+    .Comment .CommentText {
+        max-height: 140px;
+        overflow: scroll;
+    }
+}

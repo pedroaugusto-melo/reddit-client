@@ -12,7 +12,7 @@ describe('App Component', () => {
         </ Provider>
       );
 
-      expect(screen.getByText(/reddit/i)).toBeInTheDocument();
+      expect(screen.getByTestId(/menu/i)).toBeInTheDocument();
     });
 
     it('shows post component', () => {

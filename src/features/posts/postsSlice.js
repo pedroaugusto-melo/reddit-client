@@ -3,9 +3,15 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const fetchPosts = createAsyncThunk(
     'posts/fetchPosts',
-    async (currSubreddit, thunkAPI) => {
-        const response = await fetch(`https://www.reddit.com/${currSubreddit}.json`);
+    async ({currentSubreddit, currentSearchTerm}, thunkAPI) => {
+        let response = null;
 
+        if(currentSearchTerm) {
+            response = await fetch(`https://www.reddit.com/search.json?q=${currentSearchTerm}`);
+        } else {
+            response = await fetch(`https://www.reddit.com/${currentSubreddit}.json`);
+        }
+        
         return response.json();
     }
 );

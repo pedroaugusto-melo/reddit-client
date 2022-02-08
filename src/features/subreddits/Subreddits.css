@@ -11,6 +11,7 @@
     text-align: center;
     row-gap: 20px;
     border-top: 0.75px solid var(--dark-main-background);
+    margin-bottom: 10px;
 }
 
 .Subreddits ul {

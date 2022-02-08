@@ -1,6 +1,7 @@
 .Post {
     width: 90%;
     margin: 0 auto;
+    position: relative;
 }
 
 .PostContent {
@@ -12,6 +13,12 @@
     padding: 15px 25px;
     display: flex;
     column-gap: 25px;
+}
+
+.Post .comments-active {
+    border-radius: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .Post h2, h3, h4, h5, h6 {
@@ -81,8 +88,10 @@
     padding-top: 12.5px;
 }
 
-.Post .PostSummary .AuthorAndComments .Comments{
+.Post .PostSummary .AuthorAndComments .CommentsStatus{
     display: flex;
+    padding: 0;
+    flex-direction: row;
     align-items: center;
     column-gap: 10px;
 }

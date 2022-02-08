@@ -7,10 +7,13 @@
   --dark-main-background: #76777B;
   --dark-post-background: #939598;
   --dark-input-background: #DFE1E5;
+  --dark-comment-background: var(--dark-main-background);
 }
 
 .App {
   font-family: 'Poppins', sans-serif;
   background-color: var(--dark-main-background);
   min-height: 100vh;
+  width: 100%;
+  position: relative;
 }

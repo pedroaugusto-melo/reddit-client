@@ -4,6 +4,7 @@ import { selectCurrentSubreddit, selectIsErrorPosts, selectIsLoadingPosts, selec
 import { fetchPosts } from './postsSlice';
 import Post from './post/Post';
 import './Posts.css';
+import { selectSearchTerm } from '../search-bar/searchBarSlice';
 
 export default function Posts() {
     const dispatch = useDispatch();
@@ -11,13 +12,17 @@ export default function Posts() {
     const [ isShowingAll, setIsShowingAll ] = useState(false);
     
     const currentSubreddit = useSelector(selectCurrentSubreddit);
+    const currentSearchTerm = useSelector(selectSearchTerm)
     const subredditPosts = useSelector(selectSubredditsPosts);
     const isLoadingPosts = useSelector(selectIsLoadingPosts);
     const isErrorPosts = useSelector(selectIsErrorPosts);
 
     useEffect(() => {
-        dispatch(fetchPosts(currentSubreddit));
-    }, [currentSubreddit, dispatch]);
+        dispatch(fetchPosts({
+            currentSubreddit: currentSubreddit,
+            currentSearchTerm: currentSearchTerm
+        }));
+    }, [currentSubreddit, currentSearchTerm, dispatch]);
 
     const handleShowAll = () => {
         setIsShowingAll(true);
@@ -26,10 +31,16 @@ export default function Posts() {
     const handleShowLess = () => {
         setIsShowingAll(false);
     }
+    
 
     return (
         <div className='Posts' data-testid='Posts'>
-            <h1>Subreddit: {currentSubreddit}</h1>
+            {currentSearchTerm ?
+                <h1>Search: {currentSearchTerm}</h1>   
+                :
+                <h1>Subreddit: {currentSubreddit}</h1>
+            }
+            
 
             {isLoadingPosts && 
                 <h3>Loading...</h3>

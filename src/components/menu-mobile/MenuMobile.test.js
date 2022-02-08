@@ -1,5 +1,6 @@
 import { render, fireEvent, screen } from '@testing-library/react'
 import MenuMobile from './MenuMobile';
+import Posts from '../../features/posts/Posts';
 import { Provider } from 'react-redux';
 import store from '../../app/store';
 
@@ -10,10 +11,11 @@ describe('MenuMobile component', () => {
             render(
               <Provider store={store} >
                 <MenuMobile />
+                <Posts />
               </Provider>
             );
 
-            expect(screen.getByText(/reddit/i)).toBeInTheDocument();
+            expect(screen.getByAltText(/reddit icon/i)).toBeInTheDocument();
         })
     });
 
@@ -22,6 +24,7 @@ describe('MenuMobile component', () => {
           render(
             <Provider store={store} >
               <MenuMobile />
+              <Posts />
             </Provider>
           );
     
@@ -35,6 +38,7 @@ describe('MenuMobile component', () => {
           render(
             <Provider store={store} >
               <MenuMobile />
+              <Posts />
             </Provider>
           );
     
@@ -50,6 +54,7 @@ describe('MenuMobile component', () => {
           render(
             <Provider store={store} >
               <MenuMobile />
+              <Posts />
             </Provider>
           );
     
@@ -63,6 +68,7 @@ describe('MenuMobile component', () => {
           render(
             <Provider store={store} >
               <MenuMobile />
+              <Posts />
             </Provider>
           );
     

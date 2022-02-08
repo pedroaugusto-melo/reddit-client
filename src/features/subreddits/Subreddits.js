@@ -4,6 +4,7 @@ import './Subreddits.css';
 import imgSub from '../../img/img-sub-reddit.png';
 import { selectSubredditsData, selectSubredditsLoadingState, selectSubrreditsErrorState } from './subredditsSlice';
 import { setCurrentSubreddit } from '../posts/postsSlice';
+import { setSearchTerm } from '../search-bar/searchBarSlice';
 
 export default function Subreddits() {
     const dispatch = useDispatch();
@@ -24,6 +25,7 @@ export default function Subreddits() {
     const handleSelectSubreddit = id => {
         const diplayNameSelected = subredditsData.find(subredditData => subredditData.id === id).displayName;
         dispatch(setCurrentSubreddit(diplayNameSelected));
+        dispatch(setSearchTerm(''));
     };
 
     return(

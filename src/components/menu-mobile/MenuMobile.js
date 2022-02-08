@@ -6,19 +6,13 @@ import btnSearch from '../../img/img-search.png';
 import btnSub from '../../img/img-menu.png';
 import btnClose from '../../img/img-close.png';
 import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchSubreddits } from '../../features/subreddits/subredditsSlice';
-import { selectSubredditsPosts } from '../../features/posts/postsSlice';
 
 export default function MenuMobile() {
     const [ isSearchActive, setIsSearchActive ] = useState(false);
     const [ isSubActive, setIsSubActive ] = useState(false);
     const dispatch = useDispatch();
-    const currPosts = useSelector(selectSubredditsPosts);
-
-    useEffect(() => {
-        setIsSubActive(false);
-    }, [currPosts]);
 
     useEffect(() => {
         dispatch(fetchSubreddits());
@@ -27,17 +21,45 @@ export default function MenuMobile() {
     const handleSearchClick = () => {
         setIsSearchActive(prevIsSearchActive => !prevIsSearchActive);
         setIsSubActive(false);
+        formatSearchMargin();
     };
     
     const handleSubClick = () => {
         setIsSubActive(prevIsSubActive => !prevIsSubActive);
         setIsSearchActive(false);
+        formatSubredditsMargin();
     };
 
+    function formatSearchMargin() {
+        const postsDiv = document.querySelector('.Posts');
+
+        if(!isSearchActive) {
+            postsDiv.style.paddingTop = '100px';
+        } else {
+            postsDiv.style.paddingTop = '20px';
+        }
+    }
+
+    function formatSubredditsMargin(){
+        const postsDiv = document.querySelector('.Posts');
+        let subredditsDivHeight = 0;
+
+        if(isSubActive) {
+            subredditsDivHeight = document.querySelector('.Subreddits').getBoundingClientRect().height;
+        }
+
+        if(!isSubActive) {
+            postsDiv.style.paddingTop = `${subredditsDivHeight + 250}px`;
+        } else {
+            postsDiv.style.paddingTop = '20px';
+        }
+        
+    }
+
     return(
-        <header className='MenuMobile'>
+        <header className='MenuMobile' data-testid='Menu'>
             <figure className='Brand'>
-                <img alt='' src={iconReddit} />
+                <img alt='Reddit Icon' src={iconReddit} />
                 <figcaption>
                     reddit
                 </figcaption>

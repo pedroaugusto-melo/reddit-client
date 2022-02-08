@@ -1,5 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import { Provider } from 'react-redux';
 import Post from './Post';
+import store from '../../../app/store';
 
 const mockState = {
     subredditPosts: [
@@ -42,7 +44,11 @@ const mockState = {
 describe('Post component', () => {
     describe('when rendered', () => {
         it('display all data fields', () => {
-            render( <Post post={mockState.subredditPosts[0]} /> );
+            render(
+                <Provider store={store}> 
+                    <Post post={mockState.subredditPosts[0]} />
+                </Provider> 
+            );
 
             expect(screen.getByTestId('title')).toBeInTheDocument();
             expect(screen.getByTestId('ups')).toBeInTheDocument();
@@ -55,7 +61,11 @@ describe('Post component', () => {
 
     describe('when comment button is clicked', () => {
         it('shows the comments', () => {
-            render( <Post post={mockState.subredditPosts[0]} /> );
+            render(
+                <Provider store={store}> 
+                    <Post post={mockState.subredditPosts[0]} />
+                </Provider> 
+            );
 
             const btnComments = screen.getAllByAltText(/comment/i)[0];
             fireEvent.click(btnComments);
