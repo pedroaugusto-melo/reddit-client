@@ -17,3 +17,17 @@
   width: 100%;
   position: relative;
 }
+
+.MenuDesktop {
+  display: none;
+}
+
+@media only screen and (min-width: 770px) {
+  .MenuMobile {
+    display: none;
+  }
+
+  .MenuDesktop {
+    display: block;
+  }
+}
