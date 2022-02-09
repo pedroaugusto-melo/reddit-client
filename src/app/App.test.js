@@ -3,6 +3,8 @@ import store from './store';
 import App from './App';
 import { Provider } from 'react-redux';
 
+global.fetch = jest.fn(() => {});
+
 describe('App Component', () => {
   describe('when render', () => {
     it('shows a menu', () => {

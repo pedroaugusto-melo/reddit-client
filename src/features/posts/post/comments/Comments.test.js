@@ -109,12 +109,7 @@ describe('Comments component', () => {
                 payload: mockResponse
             });
 
-            console.log(mockState.commentsData['1']);
-
             for(let comment of mockState.commentsData['1']) {
-                console.log('Comment: ', comment);
-                console.log(mockState.commentsData[comment]);
-                
                 expect(screen.getByText(comment.author)).toBeInTheDocument();
                 expect(screen.getByText(comment.text)).toBeInTheDocument();
                 expect(screen.getAllByTestId('comment-date')[0]).toBeInTheDocument();

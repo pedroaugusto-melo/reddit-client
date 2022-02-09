@@ -4,14 +4,14 @@ import Posts from '../../features/posts/Posts';
 import { Provider } from 'react-redux';
 import store from '../../app/store';
 
+global.fetch = jest.fn(() => {});
 
 describe('MenuMobile component', () => {
     describe('when redered', () => {
         it('shows the brand', () => {
-            render(
+          render(
               <Provider store={store} >
                 <MenuMobile />
-                <Posts />
               </Provider>
             );
 
