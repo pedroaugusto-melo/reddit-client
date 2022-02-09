@@ -17,9 +17,9 @@
     margin: 0 20px;
 }
 
-.Brand img {
+.MenuMobile .Brand img {
     width: 36px;
-    height: auto;
+    height: 36px;
 }
 
 .MenuMobile .NavMobile {
