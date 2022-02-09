@@ -3,18 +3,14 @@
 #### Mobile version 
 
 ![Mobile - Home](./src/img/app-mobile-home.png)
-
 ![Mobile - Search](./src/img/app-mobile-search.png)
-
 ![Mobile - Subreddits](./src/img/app-mobile-subreddits.png)
-
 ![Mobile - Comments](./src/img/app-mobile-comments.png)
 
 
 #### Desktop version
 
 ![Desktop - Home](./src/img/app-desktop-home.png)
-
 ![Desktop - Comments](./src/img/app-desktop-comments.png)
 
 To see the project on Figma, click [here](https://www.figma.com/file/qD8S0ysXyrCvfZUqpgWpsq/Reddit-Client?node-id=0%3A1).
