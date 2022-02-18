@@ -53,6 +53,7 @@ The app's state consists of the following slices:
 - subreddits
 - posts
 - comments
+- app
 
 All states have been managed following the Redux workflow.
 
