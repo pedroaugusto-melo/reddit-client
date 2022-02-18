@@ -1,6 +1,6 @@
 # Reddit Client
 
-#### Mobile version 
+#### Mobile version (Dark Theme)
 
 ![Mobile - Home](./src/img/app-mobile-home.png)
 ![Mobile - Search](./src/img/app-mobile-search.png)
@@ -8,12 +8,12 @@
 ![Mobile - Comments](./src/img/app-mobile-comments.png)
 
 
-#### Desktop version
+#### Desktop version (Dark Theme)
 
 ![Desktop - Home](./src/img/app-desktop-home.png)
 ![Desktop - Comments](./src/img/app-desktop-comments.png)
 
-To see the project on Figma, click [here](https://www.figma.com/file/qD8S0ysXyrCvfZUqpgWpsq/Reddit-Client?node-id=0%3A1).
+To see the project on Figma, including the light theme design, click [here](https://www.figma.com/file/qD8S0ysXyrCvfZUqpgWpsq/Reddit-Client?node-id=0%3A1).
 
 ## Table of contents
 - [General info](#general-info)
