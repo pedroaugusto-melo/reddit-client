@@ -37,6 +37,7 @@ export default function MenuMobile() {
         dispatch(setSearchTerm(''));
     };
 
+
     function formatSearchMargin() {
         const postsDiv = document.querySelector('.Posts');
 

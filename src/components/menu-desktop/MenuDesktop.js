@@ -5,15 +5,31 @@ import SearchBar from '../../features/search-bar/SearchBar';
 import Subreddits from '../../features/subreddits/Subreddits';
 import { setCurrentSubreddit } from '../../features/posts/postsSlice';
 import { setSearchTerm } from '../../features/search-bar/searchBarSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectAppearance, setAppearance } from '../../app/appSlice';
+import { FormControlLabel, FormGroup, Switch } from '@mui/material';
 
 export default function MenuDesktop() {
+    const currAppearance = useSelector(selectAppearance);
+
     const dispatch = useDispatch();
 
     const handleClickBrand = () => {
         dispatch(setCurrentSubreddit('r/Home'));
         dispatch(setSearchTerm(''));
     };
+
+    const handleApparanceChange = () => {
+        const appDiv = document.querySelector('.App');
+
+        if(currAppearance === 'dark') {
+            dispatch(setAppearance('light'));
+            appDiv.setAttribute('id', 'light');
+        } else {
+            dispatch(setAppearance('dark'));
+            appDiv.setAttribute('id', 'dark');
+        }
+    }
 
     return (
         <header className='MenuDesktop'>
@@ -28,6 +44,15 @@ export default function MenuDesktop() {
             
             <SearchBar />
             <img className='ImgSearch' alt='Search Icon' src={imgSearch} />
+
+            <FormGroup>
+                <FormControlLabel 
+                    control={<Switch 
+                                onClick={handleApparanceChange}/>} 
+                    label={currAppearance === 'dark' ? 'Dark Mode' : 'Light Mode'}
+                />
+            </FormGroup>
+
             <Subreddits />
         </header>
     

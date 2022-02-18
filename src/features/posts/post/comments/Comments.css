@@ -1,7 +1,7 @@
 .Comments {
     position: relative;
     box-sizing: border-box;
-    background-color: var(--dark-post-background);
+    background-color: var(--post-background);
     border: 0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;

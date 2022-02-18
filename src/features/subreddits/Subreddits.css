@@ -4,13 +4,13 @@
     top: 60px;
     width: 100%;
     padding: 20px 0;
-    background-color: var(--dark-menu-background);
+    background-color: var(--menu-background);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     row-gap: 20px;
-    border-top: 0.75px solid var(--dark-main-background);
+    border-top: 0.75px solid var(--main-background);
     margin-bottom: 10px;
 }
 
@@ -51,6 +51,10 @@ h3 {
     font-weight: 700;
 }
 
+.Subreddits .MuiFormGroup-root {
+    margin-left: 60vw; 
+}
+
 @media only screen and (min-width: 770px) {
     .Subreddits {
         box-sizing: border-box;
@@ -61,7 +65,7 @@ h3 {
         align-items: flex-start;
         row-gap: 45px;
         padding: 20px 30px;
-        color: var(--dark-color-text);
+        color: var(--text);
         border-radius: 20px;
     }
 
@@ -86,5 +90,9 @@ h3 {
 
     .Subreddits h3 {
         margin: 0 auto;
+    }
+
+    .Subreddits .MuiFormGroup-root {
+        display: none;   
     }
 }

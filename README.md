@@ -23,7 +23,7 @@ To see the project on Figma, click [here](https://www.figma.com/file/qD8S0ysXyrC
 
 ## General info
 
-The app is a Reddic Client when the user can see the posts of each subreddit category and search for specific post in the search bar. The user can also see the top-level comments of each post.
+The app is a Reddic Client when the user can see the posts of each subreddit category and search for specific post in the search bar. The user can also see the top-level comments of each post. The app also has ligh mode and dark mode themes.
 
 ### App Component
 

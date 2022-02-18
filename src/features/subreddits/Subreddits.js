@@ -5,8 +5,12 @@ import imgSub from '../../img/img-sub-reddit.png';
 import { selectSubredditsData, selectSubredditsLoadingState, selectSubrreditsErrorState } from './subredditsSlice';
 import { setCurrentSubreddit } from '../posts/postsSlice';
 import { setSearchTerm } from '../search-bar/searchBarSlice';
+import { selectAppearance, setAppearance } from '../../app/appSlice';
+import { FormControlLabel, FormGroup, Switch } from '@mui/material';
 
 export default function Subreddits() {
+    const currAppearance = useSelector(selectAppearance);
+    
     const dispatch = useDispatch();
     const subredditsData = useSelector(selectSubredditsData);
     const isSubredditsLoading = useSelector(selectSubredditsLoadingState);
@@ -29,8 +33,28 @@ export default function Subreddits() {
         dispatch(setSearchTerm(''));
     };
 
+    const handleApparanceChange = () => {
+        const appDiv = document.querySelector('.App');
+
+        if(currAppearance === 'dark') {
+            dispatch(setAppearance('light'));
+            appDiv.setAttribute('id', 'light');
+        } else {
+            dispatch(setAppearance('dark'));
+            appDiv.setAttribute('id', 'dark');
+        }
+    }
+
     return(
         <div className='Subreddits' data-testid="Subreddits">
+            <FormGroup>
+                <FormControlLabel 
+                    control={<Switch 
+                                onClick={handleApparanceChange}/>} 
+                    label={currAppearance === 'dark' ? 'Dark Mode' : 'Light Mode'}
+                />
+            </FormGroup>
+
             {!isSubredditsLoading &&
                 <h2 className='SubredditsTitle'>Subreddits</h2>
             }

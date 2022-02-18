@@ -1,15 +1,22 @@
 import './Post.css';
-import imgUp from '../../../img/img-up.png';
-import imgDown from '../../../img/img-down.png';
-import imgComment from '../../../img/img-comment.png';
+import darkImgUp from '../../../img/dark-img-up.png';
+import darkImgDown from '../../../img/dark-img-down.png';
+import lightImgUp from '../../../img/light-img-up.png';
+import lightImgDown from '../../../img/light-img-down.png';
+import darkImgComment from '../../../img/dark-img-comment.png';
+import lightImgComment from '../../../img/light-img-comment.png';
 import { useState } from 'react';
 import Comments from './comments/Comments';
 import { formatDate } from '../../../utilities/utilities';
+import { useSelector } from 'react-redux';
+import { selectAppearance } from '../../../app/appSlice';
 
 export default function Post(props) {
     const { post } = props;
 
     const [ isShowingComments, setIsShowingComments ] = useState(false);
+
+    const currAppearance = useSelector(selectAppearance);
 
     const toggleShowComments = () => {
         const postContentClasses = document.getElementById(post.id).querySelector('.PostContent').classList;
@@ -32,9 +39,9 @@ export default function Post(props) {
 
                 <div className='PostContent' >
                     <div className='PostUps'>
-                        <img alt='Up' src={imgUp}/>
+                        <img alt='Up' src={currAppearance === 'dark' ? darkImgUp : lightImgUp}/>
                         <h3 data-testid='ups'>{post.numUps}</h3>
-                        <img alt='Down' src={imgDown}/>
+                        <img alt='Down' src={currAppearance === 'dark' ? darkImgDown : lightImgDown}/>
                     </div>
 
                     <div className='PostSummary'>
@@ -50,7 +57,7 @@ export default function Post(props) {
                                     <img 
                                         data-testid='btn-comments' 
                                         alt='Comments' 
-                                        src={imgComment} 
+                                        src={currAppearance === 'dark' ? darkImgComment : lightImgComment} 
                                     />
                                     <h5 data-testid='num-comments'>{post.numComments}</h5>
                             </div>

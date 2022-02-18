@@ -6,10 +6,10 @@
 
 .PostContent {
     box-sizing: border-box;
-    background-color: var(--dark-post-background);
+    background-color: var(--post-background);
     border: 0;
     border-radius: 20px;
-    color: var(--dark-color-text);
+    color: var(--text);
     padding: 15px 25px;
     display: flex;
     column-gap: 25px;
@@ -55,7 +55,7 @@
 
 .Post .PostSummary h2 {
     padding-bottom: 12.5px;
-    border-bottom: 1px solid var(--dark-color-text);
+    border-bottom: 1px solid var(--text);
     font-weight: 500;
     font-size: 20px;
 }

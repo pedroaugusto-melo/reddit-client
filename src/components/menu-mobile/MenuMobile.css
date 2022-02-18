@@ -2,8 +2,8 @@
     width: 100%;
     height: 60px;
     position: relative;
-    background-color: var(--dark-menu-background);
-    color: var(--dark-color-text);
+    background-color: var(--menu-background);
+    color: var(--text);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,5 +35,5 @@
 
 .MenuMobile button {
     border: 0;
-    background-color: var(--dark-menu-background);
+    background-color: var(--menu-background);
 }
